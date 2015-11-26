@@ -110,7 +110,7 @@ $app->run();
                         First off, Slim 3 knows that migrating is going to be a royal <strong>PAIN</strong>. Anything that is not created in the DiC Slim 3 happily passes the DiC to the class. <br />
                         So, fear not friends, you wont spend 100s of hours rewiring it all. <br />
                         <br />
-                        Lets take a look at proper DI in Slim 3 without resource locating. <br />
+                        Lets take a look at DI in Slim 3<br />
 <pre>
 <code class="PHP">
 //Lets Grab the DiC
@@ -119,14 +119,24 @@ $container = $app->getContainer();
 
 //This replaces the $app->singleton() in Slim v2
 $container['MyDependency'] = function ($c) {
+    //This is constructor injection
     return new Dependency($c['MyOtherDependency']);
 };
+
+$app->get('/hi', function ($req, $res, $args) {
+    $this->MyDependency->myAction();
+});
 
 //..
 </code>
 </pre>
                         <br />
-                        It's pretty easy to setup simple constructor injection.<br />
+                        <br />
+                        So let's talk about this magic. How does $this get the dependency, and what the heck is "this".<br />
+                        <br />
+                        <strong>"this"</strong><br />
+                        Believe it or not, "this" is actually the App class. $app->get() bind's the App class to the function.<br />
+                        The app class direct's all not-defined items to the container via PHP's magic methods, which is how your dependency is found!<br/>
                         <br />
                         <br />
                     </p>
