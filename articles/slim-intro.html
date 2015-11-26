@@ -45,19 +45,19 @@
     </header>
 </div>
 
-<!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
-        <h3>Get to know Slim 3.x</h3>
-        <p>
-            For those uninitiated Slim is an unopinionated php micro-framework.
-            Slim lets you do things how you want, and does not force you into structures or patterns.
+<div class="row" id="main_content">
+    <div class="col-lg-offset-2 col-lg-8">
+        <section>
+            <h3>Get to know Slim 3.x</h3>
+            <p>
+                For those uninitiated Slim is an unopinionated php micro-framework.
+                Slim lets you do things how you want, and does not force you into structures or patterns.
 
-            <br />
-            Let's take a look at a "Hello world" App
-            <br />
-            <pre>
-                <code class="PHP">
+                <br />
+                Let's take a look at a "Hello world" App
+                <br />
+                <pre>
+                    <code class="PHP">
 //It's recommended that you install it via composer
 //composer require slim/slim "^3.0@RC"
 
@@ -73,9 +73,16 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
 });
 
 $app->run();
-                </code>
-            </pre>
-        </p>
+                    </code>
+                </pre>
+            </p>
+        </section>
+    </div>
+</div>
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+
     </section>
 </div>
 
