@@ -75,7 +75,6 @@
 //It's recommended that you install it via composer
 //composer require slim/slim "^3.0@RC"
 
-<?php
 require 'vendor/autoload.php';
 
 $app = new Slim\App();
@@ -85,6 +84,7 @@ ServerRequestInterface - $request
 ResponseInterface - $response
 Array - $args
 */
+
 $app->get('/hello', function ($request, $response, $args) {
     $response->write("Hello World");
     return $response;
