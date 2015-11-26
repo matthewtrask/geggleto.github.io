@@ -129,14 +129,15 @@ $app->run();</code>
 $container = $app->getContainer();
 
 //This replaces the $app->singleton() in Slim v2
-$container['MyDependency'] = function ($c) {
+$container['MyController'] = function ($c) {
     //This is constructor injection
-    return new Dependency($c['MyOtherDependency']);
+    return new Controller($c['MyOtherDependency']);
 };
 
 //Magic!
+//Example Controller
 $app->get('/hi', function ($req, $res, $args) {
-    return $this->MyDependency->myAction();
+    return $this->MyController->myAction($req, $res, $args);
 });
 
 //..</code>
@@ -172,7 +173,7 @@ $app->add($middleware);
 
 //Apply it per route
 $app->get('/hi', function ($req, $res, $args) {
-    return $this->MyDependency->myAction();
+    return $this->MyController->myAction($req, $res, $args);
 })->add($middleware);
 
 //..</code>
