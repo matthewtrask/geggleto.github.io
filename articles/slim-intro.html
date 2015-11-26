@@ -98,6 +98,7 @@ $app->run();
                         <br />
                         Slim 3 is fully PSR-7 compliant. Minimally this means it takes a browser "Request", applies middleware, and returns a "Response". <br />
                     </p>
+                    <br/>
                     <h3>What about Dependencies?</h3>
                     <p>
                         Slim 3 by default uses the Pimple Dependency Injection Container [DiC]. Those switching from Slim 2 please pay attention to this section. <br />
@@ -138,7 +139,10 @@ $app->get('/hi', function ($req, $res, $args) {
                         Believe it or not, "this" is actually the App class. $app->get() bind's the App class to the function.<br />
                         The app class direct's all not-defined items to the container via PHP's magic methods, which is how your dependency is found!<br/>
                         <br />
+                    </p>
+                    <br/>
                         <h3>Middleware</h3>
+                    <p>
                         Middleware are pieces of code that you want to run before your route or after it.
                         Typical middlewares are things like authentication or session libraries. <br/>
                         There are 2 different types of Middleware, application wide and route specific. Both have the exact same functionality and the only difference is where and when it gets applied.<br />
