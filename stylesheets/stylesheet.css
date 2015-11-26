@@ -423,6 +423,8 @@ Small Device Styles
 body {
     /* Margin bottom by footer height */
     margin-bottom: 30px;
+
+    font-size: medium;
 }
 .footer {
     padding-top: 5px;
