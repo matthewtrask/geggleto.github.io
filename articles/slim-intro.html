@@ -62,7 +62,7 @@
         <div class="row" >
             <div class="col-md-8 col-md-offset-2">
                 <section>
-                    <h3>Get to know Slim 3.x</h3>
+                    <h3>Getting to know Slim 3.x</h3>
                     <p>
                         For those uninitiated Slim is an unopinionated php micro-framework.
                         Slim lets you do things how you want, and does not force you into structures or patterns.
@@ -80,6 +80,11 @@ require 'vendor/autoload.php';
 
 $app = new Slim\App();
 
+/**
+ServerRequestInterface - $request
+ResponseInterface - $response
+Array - $args
+*/
 $app->get('/hello', function ($request, $response, $args) {
     $response->write("Hello World");
     return $response;
@@ -93,7 +98,35 @@ $app->run();
                         Acccessing the /hello url will return what you expect.<br />
                         <br />
                         Slim 3 is fully PSR-7 compliant. Minimally this means it takes a browser "Request", applies middleware, and returns a "Response". <br />
+                    </p>
+                    <h3>What about Dependencies?</h3>
+                    <p>
+                        Slim 3 by default uses the Pimple Dependency Injection Container [DiC]. Those switching from Slim 2 please pay attention to this section. <br />
+                        <strong>Slim 3 does not work like Slim 2</strong>
+                        <br />
+                        In Slim 2, you can pass around the "Slim" class like hot potatoes [Resource Locator]. In Slim 3 this is not the way we want to do things. <br />
+                        The preferred way to do things is via proper Dependency Injection, this is why we have Pimple and a DiC. <br />
+                        <br />
+                        First off, Slim 3 knows that migrating is going to be a royal <strong>PAIN</strong>. Anything that is not created in the DiC Slim 3 happily passes the DiC to the class. <br />
+                        So, fear not friends, you wont spend 100s of hours rewiring it all. <br />
+                        <br />
+                        Lets take a look at proper DI in Slim 3 without resource locating. <br />
+<pre>
+                            <code class="PHP">
+//Lets Grab the DiC
 
+$container = $app->getContainer();
+
+//This replaces the $app->singleton() in Slim v2
+$container['MyDependency'] = function ($c) {
+    return new Dependency($c['MyOtherDependency']);
+};
+
+//..
+                            </code>
+                        </pre>
+                        <br />
+                        It's pretty easy to setup simple constructor injection.<br />
 
                     </p>
                 </section>
