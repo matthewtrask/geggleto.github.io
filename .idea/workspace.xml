@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a4ca74b4-3ad0-481e-aa37-e5c0b19da9ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/articles/slim-intro.html" afterPath="$PROJECT_DIR$/articles/slim-intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="geggleto.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="slim-intro.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/articles/slim-intro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43259084">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5357562">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -300,8 +299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/articles/slim-intro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43259084">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5357562">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding />
         </state>
       </provider>

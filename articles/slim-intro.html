@@ -42,22 +42,24 @@
             <br />
             Let's take a look at a "Hello world" App
             <br />
-            <code class="php">
-                //It's recommended that you install it via composer require slim/slim "^3.0@RC"
+            <pre>
+                <code class="php">
+                    //It's recommended that you install it via composer require slim/slim "^3.0@RC"
 
-                <?php
+                    <?php
 
-                require 'vendor/autoload.php';
+                    require 'vendor/autoload.php';
 
-                $app = new Slim\App();
+                    $app = new Slim\App();
 
-                $app->get('/hello/{name}', function ($request, $response, $args) {
-                    $response->write("Hello, " . $args['name']);
-                    return $response;
-                });
+                    $app->get('/hello/{name}', function ($request, $response, $args) {
+                        $response->write("Hello, " . $args['name']);
+                        return $response;
+                    });
 
-                $app->run();
-            </code>
+                    $app->run();
+                </code>
+            </pre>
         </p>
     </section>
 </div>
