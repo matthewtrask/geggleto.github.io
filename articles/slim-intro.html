@@ -195,6 +195,14 @@ $app->get('/hi', function ($req, $res, $args) {
                     <p>
                         The Router changed to Nikic's Fast-Router and has a ton of different options. Read about it <a href="https://github.com/nikic/FastRoute">here</a>
                     </p>
+                    <h2>POST'ing</h2>
+                    <p>
+                        A lot of new comers to PSR-7 have a difficult time with how to access Query Parameters and POST data.
+                        Its actually quite easy, but not very straight forward.
+                        <strong>_GET </strong><pre><code class="PHP">$my_get = $request->getQueryParams();</code></pre><br />
+                        <strong>_POST </strong><pre><code class="PHP">$my_post = $request->getParsedBody();</code></pre><br />
+                    </p>
+
                     Happy Coding!<br />
                     <br />
                     Feel free to chat with me on <a href="http://twitter.com/geggleto">twitter!</a> <br />
