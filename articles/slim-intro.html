@@ -101,6 +101,16 @@ $app->run();</code>
                     Minimally this means it takes a browser "Request", applies middleware, and returns a "Response". <br />
                     </p>
                     <br/>
+                    <h2>Request</h2>
+                    <p>
+                        Almost all instances of the Request refer to a ServerRequest. This is what slim constructs from your web server and the rest of the environment. It includes all header information. There is one gotcha though, be careful when you are using Apache, it strips out the Authorization Header. See <a href="https://github.com/slimphp/Slim/issues/1616">this issue</a>
+                    </p>
+                    <br/>
+                    <h2>Response</h2>
+                    <p>
+                        This object holds the data you want to send to the browser and it includes HTTP Header and cookie information.
+                    </p>
+                    <br />
                     <h2>What about Dependencies?</h2>
                     <p>
                         Slim 3 by default uses the Pimple Dependency Injection Container [DiC]. Those switching from Slim 2 please pay attention to this section. <br />
@@ -168,6 +178,25 @@ $app->get('/hi', function ($req, $res, $args) {
 //..</code>
 </pre>
                     <br />
+                    <h2>Route Parameters</h2>
+                    <p>
+                        The syntax for routing parameters has changed from Slim 2 to 3. Be wary of older articles! <br />
+                        <strong>OLD </strong><pre><code class="PHP">$app->get('/:id/');</code></pre><br />
+                        <strong>NEW </strong><pre><code class="PHP">$app->get('/{id}/');</code></pre><br />
+                        <br />
+                        Route arguments are now merged into the $args variable of the Route Callable, with the index of your parameter.<br />
+                        <strong>Example: </strong><br />
+                        <pre><code class="PHP">
+                            $app->get('/{id}/', function ($req, $res, $args) {
+                                $id = $args['id']; // Here is your Argument
+                            });
+                        </code></pre><br />
+                    </p>
+                    <br />
+                    <h2>Router</h2>
+                    <p>
+                        The Router changed to Nikic's Fast-Router and has a ton of different options. Read about it <a href="https://github.com/nikic/FastRoute">here</a>
+                    </p>
                     <br/>
                     Happy Coding!<br />
                     <br />
