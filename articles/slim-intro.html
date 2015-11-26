@@ -151,7 +151,10 @@ $app->get('/hi', function ($req, $res, $args) {
                         So let's take a look at those.
 <pre>
 <code class="PHP">$middleware = function ($req, $res, $next) {
-    return $next($req, $res);
+    //Do Something before we execute logic
+    $response =  $next($req, $res);
+    //Do something after we run our logic, maybe logging?
+    return $response;
 };
 
 //Apply it Site Wide
