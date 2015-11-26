@@ -80,14 +80,21 @@ require 'vendor/autoload.php';
 
 $app = new Slim\App();
 
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    $response->write("Hello, " . $args['name']);
+$app->get('/hello', function ($request, $response, $args) {
+    $response->write("Hello World");
     return $response;
 });
 
 $app->run();
                             </code>
                         </pre>
+                        <br />
+                        At it's core Slim is a middleware runner. You will need to get used to the $request, $response, $args pattern.<br />
+                        Acccessing the /hello url will return what you expect.<br />
+                        <br />
+                        Slim 3 is fully PSR-7 compliant. Minimally this means it takes a browser "Request", applies middleware, and returns a "Response". <br />
+
+
                     </p>
                 </section>
             </div>
