@@ -435,3 +435,7 @@ body {
 .link {
     color: #f8f8f8;
 }
+
+.top50 {
+    padding-top: 50px;
+}
