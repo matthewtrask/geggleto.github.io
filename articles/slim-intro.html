@@ -58,21 +58,21 @@
             <br />
             <pre>
                 <code class="PHP">
-                    //It's recommended that you install it via composer
-                    //composer require slim/slim "^3.0@RC"
+//It's recommended that you install it via composer
+//composer require slim/slim "^3.0@RC"
 
-                    <?php
+<?php
 
-                    require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
-                    $app = new Slim\App();
+$app = new Slim\App();
 
-                    $app->get('/hello/{name}', function ($request, $response, $args) {
-                        $response->write("Hello, " . $args['name']);
-                        return $response;
-                    });
+$app->get('/hello/{name}', function ($request, $response, $args) {
+    $response->write("Hello, " . $args['name']);
+    return $response;
+});
 
-                    $app->run();
+$app->run();
                 </code>
             </pre>
         </p>
