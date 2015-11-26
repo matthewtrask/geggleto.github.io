@@ -123,8 +123,9 @@ $container['MyDependency'] = function ($c) {
     return new Dependency($c['MyOtherDependency']);
 };
 
+//Magic!
 $app->get('/hi', function ($req, $res, $args) {
-    $this->MyDependency->myAction();
+    return $this->MyDependency->myAction();
 });
 
 //..
@@ -137,6 +138,34 @@ $app->get('/hi', function ($req, $res, $args) {
                         <strong>"this"</strong><br />
                         Believe it or not, "this" is actually the App class. $app->get() bind's the App class to the function.<br />
                         The app class direct's all not-defined items to the container via PHP's magic methods, which is how your dependency is found!<br/>
+                        <br />
+                        <h3>Middleware</h3>
+                        Middleware are pieces of code that you want to run before your route or after it.
+                        Typical middlewares are things like authentication or session libraries. <br/>
+                        There are 2 different types of Middleware, application wide and route specific. Both have the exact same functionality and the only difference is where and when it gets applied.<br />
+                        <strong>Application</strong> wide middleware are applied to all routes in your application and as you expect the route specific ones are applied to a route or route group.<br />
+                        <br />
+                        So let's take a look at those.
+<pre>
+<code class="PHP">
+$middleware = function ($req, $res, $next) {
+    return $next($req, $res);
+};
+
+//Apply it Site Wide
+$app->add($middleware);
+
+//Apply it per route
+$app->get('/hi', function ($req, $res, $args) {
+    return $this->MyDependency->myAction();
+})->add($middleware);
+
+//..
+</code>
+</pre>
+                    <br />
+                    The middleware is also container aware!
+
                         <br />
                         <br />
                     </p>
