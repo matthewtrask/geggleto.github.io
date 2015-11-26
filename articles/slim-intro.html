@@ -186,24 +186,21 @@ $app->get('/hi', function ($req, $res, $args) {
                         <br />
                         Route arguments are now merged into the $args variable of the Route Callable, with the index of your parameter.<br />
                         <strong>Example: </strong><br />
-                        <pre><code class="PHP">
-                            $app->get('/{id}/', function ($req, $res, $args) {
-                                $id = $args['id']; // Here is your Argument
-                            });
-                        </code></pre><br />
+                        <pre><code class="PHP">$app->get('/{id}/', function ($req, $res, $args) {
+    $id = $args['id']; // Here is your Argument
+});</code></pre><br />
                     </p>
                     <br />
                     <h2>Router</h2>
                     <p>
                         The Router changed to Nikic's Fast-Router and has a ton of different options. Read about it <a href="https://github.com/nikic/FastRoute">here</a>
                     </p>
-                    <br/>
                     Happy Coding!<br />
                     <br />
                     Feel free to chat with me on <a href="http://twitter.com/geggleto">twitter!</a> <br />
                     You can find me on <a href="http://linkedin.com/ln/geggleto">LinkedIn</a> <br />
                     Or you can find me in the <strong>#SlimPHP</strong> channel on freenode!
-                        <br />
+
                         <br />
                     </p>
                 </section>
