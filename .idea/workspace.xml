@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4ca74b4-3ad0-481e-aa37-e5c0b19da9ad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/articles/slim-intro.html" afterPath="$PROJECT_DIR$/articles/slim-intro.html" />
-    </list>
+    <list default="true" id="a4ca74b4-3ad0-481e-aa37-e5c0b19da9ad" name="Default" comment="" />
     <ignored path="geggleto.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -27,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.290323">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6189918">
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slim-intro.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="slim-intro.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/articles/slim-intro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23212193">
+            <state vertical-scroll-proportion="-6.387097">
               <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="74" selection-end-column="12" />
               <folding />
             </state>
@@ -275,18 +273,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/articles/slim-intro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.290323">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.387097">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="74" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/articles/slim-intro.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23212193">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="74" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.6189918">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding />
         </state>
       </provider>
