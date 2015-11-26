@@ -89,8 +89,7 @@ $app->get('/hello', function ($request, $response, $args) {
     return $response;
 });
 
-$app->run();
-                            </code>
+$app->run();</code>
                         </pre>
                         <br />
                         At it's core Slim is a middleware runner. You will need to get used to the $request, $response, $args pattern.<br />
@@ -112,8 +111,7 @@ $app->run();
                         <br />
                         Lets take a look at DI in Slim 3<br />
 <pre>
-<code class="PHP">
-//Lets Grab the DiC
+<code class="PHP">//Lets Grab the DiC
 
 $container = $app->getContainer();
 
@@ -128,8 +126,7 @@ $app->get('/hi', function ($req, $res, $args) {
     return $this->MyDependency->myAction();
 });
 
-//..
-</code>
+//..</code>
 </pre>
                         <br />
                         <br />
@@ -150,8 +147,7 @@ $app->get('/hi', function ($req, $res, $args) {
                         <br />
                         So let's take a look at those.
 <pre>
-<code class="PHP">
-$middleware = function ($req, $res, $next) {
+<code class="PHP">$middleware = function ($req, $res, $next) {
     return $next($req, $res);
 };
 
@@ -163,8 +159,7 @@ $app->get('/hi', function ($req, $res, $args) {
     return $this->MyDependency->myAction();
 })->add($middleware);
 
-//..
-</code>
+//..</code>
 </pre>
                     <br />
                     <br/>
