@@ -126,8 +126,8 @@
 
                     So this is the reason why My Rule #1 is so important. <br />
                     Slim is my front-end, its the most top layer. It handles turning System Input into requests for my system to pass down and process.
-                    Slim only EVER, communicates with the service layer, NEVER EVER EVER does it interact with models.<br />This is the slippery slope,
-                    We all have been here. Ugh I just need the model, I already have the PK ill just grab it here. <br />
+                    Slim only EVER, communicates with the service layer, NEVER EVER EVER does it interact with models.<br />
+                    This is the slippery slope,We all have been here. Ugh I just need the model, I already have the PK ill just grab it here. <br />
                     <pre><code class="PHP">function ($req, $res, $args) {
     $model = Model::find($args['id']);
 }</code></pre>
@@ -135,9 +135,9 @@
                 You in 5 years will be super glad that you don't. Consider these 2 things. <br />
                 1) It breaks DRY. <br />
                 2) Migration <br />
-                You want to move your backend from Eloquent 5 -> 6. The API is BC breaking.
+                You want to move your backend from Eloquent 5 -> 6. The API is BC breaking. <br />
                 You now have to go through your entire APP to replace all instances of Model::find() to whatever the new API... trust me its a headache.<br />
-                Just don't do it. I know its a pain to write YET ANOTHER SERVICE [YAS]. Future you will be so thankful.
+                Just don't do it. I know its a pain to write YET ANOTHER SERVICE [YAS]. Future you will be so thankful.<br />
                 <br/>
 
                 </p>
