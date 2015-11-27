@@ -73,9 +73,9 @@
                     <br/>
                 Sounds easy right? I am sure we all start off new projects thinking that things will be perfect. Well I hope these ideas help you actually keep those design goals. All too often with deadlines and budget concerns that you end up with a less ideal system because time didn't allow for proper design to happen. We all have been there, or are currently there.<br/>
                     <br/>
-                Let's talk about System Design and what tools I use day-in-day out to complete jobs.
+                Let's talk about what tools I use day-in-day out to complete jobs.
                 </p>
-
+                <br />
                 <h3>Frameworks: Slim Framework</h3>
 <p>
                 I swear by the slim framework. I contribute often to that project. The reason why, it has the perfect number of features for me. It doesn't have too little, it doesn't have too much. It's literally the perfect little starter package.<br/>
@@ -84,18 +84,18 @@
     <br/>
                 When I say adaptively, I mean that it provides a perfect slate for creating business logic. Slim literally has nothing to do with it. There are no conventions, nothing that I need to integrate into Slim. This leaves me with an easy and clean API into my Service Layer.
 </p>
-
+                <br />
                 <h3>Services, build upon Services.</h3>
                 <p>
                 When people talk about Services it sometimes gets lost that this is where the business logic is. You might think that this is some crazy class calling chain that does magic stuff...<br/>
                 My Services aggregate information from the Persistence Layer or are a Utility.<br/>
                 </p>
-
+                <br />
                 <h3>Utility</h3>
 <p>
                 I call a service that does not interact with a the peristence layer a Utility. For instance I have an Email Utility that uses SwiftMailer to send an email. No persistence Interaction there at all. It merely provides an API to send an email.
 </p>
-
+                <br />
                 <h3>Persistence Layer</h3>
 <p>
                 I really don't care what the purists say about Active Record. It works, and its not my code so I don't have to test it. I use it religiously because it allows me to be "PRODUCTIVE". I don't have to write a whole Mapper or Entity class, I literally change 4 lines of code and bam I have a good "Model". My service layer handles the business logic of it so, I don't want to hear any of this blah blah Logic on your model.
