@@ -68,7 +68,7 @@
 
                 <h3>Part One: Software Packages</h3>
                 <p>
-                In this article we are going to cover application architecture and application folder structure. I have found that both are an ever evolving concept, as more libraries are created your architecture and folder structure will change. Currently and for the foreseeable future I have been rolling with what is currently in this document.<br/>
+                In this article we are going to cover application architecture. I have found that both are an ever evolving concept, as more libraries are created your architecture and folder structure will change. Currently and for the foreseeable future I have been rolling with what is currently in this document.<br/>
                 <br/>
                 First off lets identify a few design goals.<br/>
                     <br/>
@@ -109,7 +109,7 @@
 </p>
 <br />
 <br />
-                <h3>Integration</h3>
+                <h3>Part One: Integration - The pieces fit together</h3>
                 <p>
                     What I really have neglected thus far is the reasoning for all of these different components. All of these components fit together like layers of an onion.
                     I always 100% maintain the following rule and it is so absolutely necessary.<br />
@@ -133,14 +133,16 @@
 }</code></pre>
                 <strong>DON'T DO IT!!!!!!!</strong> <br />
                 You in 5 years will be super glad that you don't. Consider these 2 things. <br />
-                1) It breaks DRY. <br />
-                2) Migration <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;1) It breaks DRY. <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;2) Migration <br />
                 You want to move your backend from Eloquent 5 -> 6. The API is BC breaking. <br />
                 You now have to go through your entire APP to replace all instances of Model::find() to whatever the new API... trust me its a headache.<br />
                 Just don't do it. I know its a pain to write YET ANOTHER SERVICE [YAS]. Future you will be so thankful.<br />
                 <br/>
 
                 </p>
+
+                <h3>Folder Structure</h3>
 
             </section>
         </div>
