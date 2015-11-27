@@ -63,13 +63,15 @@
         <div class="col-md-8 col-md-offset-2">
             <section>
                 <h2>Application Architecture</h2>
+
+                <h3>Part One: Software Packages</h3>
                 <p>
-                In this article we are going to cover application architecture and application folder structure. I have found that both are an ever evolving concept, as more libraries are created your architecture and folder structure will change. Currently and for the forseeable future I have been rolling with what is currently in this document.<br/>
+                In this article we are going to cover application architecture and application folder structure. I have found that both are an ever evolving concept, as more libraries are created your architecture and folder structure will change. Currently and for the foreseeable future I have been rolling with what is currently in this document.<br/>
                 <br/>
                 First off lets identify a few design goals.<br/>
                     <br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;1) Our applications must be testable.<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;2) Our applications must be modifyable.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;2) Our applications must be modify-able.<br/>
                     <br/>
                 Sounds easy right? I am sure we all start off new projects thinking that things will be perfect. Well I hope these ideas help you actually keep those design goals. All too often with deadlines and budget concerns that you end up with a less ideal system because time didn't allow for proper design to happen. We all have been there, or are currently there.<br/>
                     <br/>
@@ -93,12 +95,15 @@
                 <br />
                 <h3>Utility</h3>
 <p>
-                I call a service that does not interact with a the peristence layer a Utility. For instance I have an Email Utility that uses SwiftMailer to send an email. No persistence Interaction there at all. It merely provides an API to send an email.
+                I call a service that does not interact with a the persistence layer a Utility. For instance I have an Email Utility that uses SwiftMailer to send an email. No persistence Interaction there at all. It merely provides an API to send an email.
 </p>
                 <br />
                 <h3>Persistence Layer</h3>
 <p>
-                I really don't care what the purists say about Active Record. It works, and its not my code so I don't have to test it. I use it religiously because it allows me to be "PRODUCTIVE". I don't have to write a whole Mapper or Entity class, I literally change 4 lines of code and bam I have a good "Model". My service layer handles the business logic of it so, I don't want to hear any of this blah blah Logic on your model.
+                Simply put, I use Active Record. I have never needed anything else. I don't work with 100 servers, my project's are not data intensive. Only a few GB's a day. Active Record is perfectly fine 99% of the time.
+                I love its simplicity. I love how in 20 lines of code I never have to write a SQL statement unless I absolutely need to. I like how I don't have to use relationships, and I love how they work.
+                I understand that it's not the most PURE architecture. Yes it does violate the SRP principle, and you know what? I don't care. It's not my code to maintain, I leave the downsides up to the author's.
+                <br /> If you are wondering what one I use ... 'Eloquent' <i>ducks</i>.
 </p>
 
 
