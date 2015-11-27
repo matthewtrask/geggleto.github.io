@@ -113,8 +113,18 @@
                 <p>
                     What I really have neglected thus far is the reasoning for all of these different components. All of these components fit together like layers of an onion.
                     I always 100% maintain the following rule and it is so absolutely necessary.<br />
-                    <strong>Layers Only communicate Up ONE layer and DOWN ONE layer.</strong><br />
+
+                    <strong>&nbsp;&nbsp;RULE #1: Layers Only communicate Up ONE layer, DOWN ONE layer or SIDEWAYS.</strong><br />
+
                     <br />Did I lose you? Hang on a bit more.<br />
+                    <br />
+                    Let's talk about these layers. It's quite simple really.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;TOP LAYER: Slim Framework<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;MIDDLE LAYER: Services / Utilities<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;BOTTOM LAYER: Active Record [Eloquent for me]<br />
+                    <br />
+
+                    So this is the reason why My Rule #1 is so important. <br />
                     Slim is my front-end, its the most top layer. It handles turning System Input into requests for my system to pass down and process.
                     Slim only EVER, communicates with the service layer, NEVER EVER EVER does it interact with models.<br />This is the slippery slope,
                     We all have been here. Ugh I just need the model, I already have the PK ill just grab it here. <br />
