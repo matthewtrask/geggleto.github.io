@@ -24,11 +24,11 @@ $app->get('/', function ($request, $response, $args) {
     return $this->view->render($response, "index.twig", ["title" => "Welcome!"]);
 });
 
-$app->get('/articles/slim-intro', function ($request, $response, $args) {
+$app->get('/articles/slim-intro[.html]', function ($request, $response, $args) {
     return $this->view->render($response, "slim-intro.twig", ["title" => "Slim Introduction"]);
 });
 
-$app->get('/articles/php-app-architecture', function ($request, $response, $args) {
+$app->get('/articles/php-app-architecture[.html]', function ($request, $response, $args) {
     return $this->view->render($response, "php-app-architecture.twig", ["title" => "PHP App Architecture"]);
 });
 
