@@ -1,0 +1,50 @@
+<div>
+    <h2>PHP REST API</h2>
+    <p>
+    In this article we are going to explore how to build a simple REST API in php.<br />
+    <h3>What is REST exactly?</h3>
+    REST (REpresentational State Transfer).  It relies on a stateless, client-server, cacheable communications protocol -- and in virtually all cases, the HTTP protocol is used.<br />
+    <br />
+    Yeah that makes sense right? Uh Yeah.<br />
+    This is what it all boils down to, our most favourite term. CRUD.<br />
+    For those uninitiated CRUD is simply [create, read, update, delete], maps 1:1 to different HTTP Verbs. <br />
+    CREATE ==> POST<br />
+    READ ==> GET<br />
+    UPDATE ==> PUT<br />
+    DELETE ==> DELETE<br />
+    <br />
+    Okay that's more simple right? It's a whole big fancy concept that is actually super simple. <br />
+    Let's take a look at a super simple example. In this example we will provide CRUD for 1 Entity, a User. <br />
+    <i>The code example below is based upon Slim 3 RC3</i> <br />
+    <pre><code class="PHP">
+//CREATE
+$app->post('/user', function ($req, $res, $args) {
+    $user = new User($req->getParsedBody());
+    return $res->write(json_encode($user->toArray());
+});
+
+//READ
+$app->get('/user/{id}', function ($req, $res, $args) {
+    $user = User::find($args['id']);
+    return $res->write(json_encode($user->toArray());
+});
+
+//UPDATE
+$app->put('/user/{id}', function ($req, $res, $args) {
+    $user = User::find($args['id']);
+    $user->update_attributes($req->getParsedBody());
+    return $res->write(json_encode($user->toArray());
+});
+
+//DELETE
+$app->delete('/user/{id}', function ($req, $res, $args) {
+    $user = User::find($args['id']);
+    $result = $user->delete();
+    return $res->write(json_encode(["result" => $result]);
+});
+</code></pre>
+    <br />
+    Congrats you just build your for first REST API! <br />
+    It might be basic
+    </p>
+</div>
