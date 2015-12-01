@@ -1,3 +1,9 @@
 .idea/* 
 .idea/
 .idea
+.DS_Store
+composer.lock
+phpunit.xml
+vendor
+clover.xml
+cache/

@@ -1,81 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Geggleto.GitHub.io : ">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="/public/js/bootstrap.min.js" ></script>
-
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <link rel="stylesheet" type="text/css" media="screen"
-          href="/public/stylesheets/stylesheet.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-    <title>Geggleto | Slim 3 Introduction</title>
-
-    <!-- Google Analytics -->
-    <script type="application/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-70877302-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <!-- End Google Analytics -->
-</head>
-
-<body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">
-                            <span class="glyphicon glyphicon-home"></span>
-                            Home
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/articles/slim-intro.html">Slim 3 Intro</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-
-    <div class="container-fluid top50">
-        <div class="row" >
-            <div class="col-md-8 col-md-offset-2">
-                <section>
+{% extends "layout.twig" %}
+{% block content %}
                     <img src="http://www.slimframework.com/assets/images/swag-sticker-text.png">
                     <br />
                     <h2>Getting to know Slim 3.x</h2>
@@ -211,34 +135,11 @@ $app->get('/hi', function ($req, $res, $args) {
                     </p>
                     <h2>POST'ing</h2>
                     <p>
-                        A lot of new comers to PSR-7 have a difficult time with how to access Query Parameters and POST data.
-                        Its actually quite easy, but not very straight forward. <br /> <br />
-                        <strong>_GET </strong><pre><code class="PHP">$my_get = $request->getQueryParams();</code></pre><br />
-                        <strong>_POST </strong><pre><code class="PHP">$my_post = $request->getParsedBody();</code></pre><br />
+                    A lot of new comers to PSR-7 have a difficult time with how to access Query Parameters and POST data.
+                    Its actually quite easy, but not very straight forward. <br /> <br />
+                    <strong>_GET </strong><pre><code class="PHP">$my_get = $request->getQueryParams();</code></pre><br />
+                    <strong>_POST </strong><pre><code class="PHP">$my_post = $request->getParsedBody();</code></pre><br />
                     </p>
 
                     Happy Coding!<br />
-                    <br />
-                    Feel free to chat with me on <a href="http://twitter.com/geggleto">twitter!</a> <br />
-                    You can find me on <a href="http://linkedin.com/in/geggleto">LinkedIn</a> <br />
-                    Or you can check me out on <a href="http://stackoverflow.com/users/3088363/geggleto">Stack Overflow</a><br />
-                    Or you can find me in the <strong>#SlimPHP</strong> channel on freenode!
-
-                        <br />
-                    </p>
-                </section>
-            </div>
-        </div>
-    </div>
-
-    <div class="navbar-fixed-bottom footer">
-        <div class="container">
-            <div class="row"></div>
-                <div class="col-md-offset-4 col-md-4 link">
-                    Published with GitHub Pages
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock %}
