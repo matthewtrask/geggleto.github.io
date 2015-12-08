@@ -1,6 +1,9 @@
 <?php
 require '../vendor/autoload.php';
 
+use Slim\Http\Request;
+use Slim\Http\Response;
+
 $app = new Slim\App();
 
 $container = $app->getContainer();
@@ -12,7 +15,7 @@ $container['view'] = function ($c) {
     ]);
 
     // Instantiate and add Slim specific extension
-    $view->addExtension(new Slim\Views\TwigExtension(
+    $view->addExtension(new \Slim\Views\TwigExtension(
         $c['router'],
         $c['request']->getUri()
     ));
@@ -20,15 +23,24 @@ $container['view'] = function ($c) {
     return $view;
 };
 
-$app->get('/', function ($request, $response, $args) {
+$app->add(function (Request $request,  Response $response, $next) {
+    if ($request->getUri()->getScheme() !== 'https') {
+        $uri = $request->getUri()->withScheme("https");
+        return $response->withRedirect( (string)$uri );
+    } else {
+        return $next($request, $response);
+    }
+});
+
+$app->get('/', function (Request $request, Response $response, $args) {
     return $this->view->render($response, "index.twig", ["title" => "Welcome!"]);
 });
 
-$app->get('/articles/slim-intro[.html]', function ($request, $response, $args) {
+$app->get('/articles/slim-intro[.html]', function (Request $request,  Response $response, $args) {
     return $this->view->render($response, "slim-intro.twig", ["title" => "Slim Introduction"]);
 });
 
-$app->get('/articles/php-app-architecture[.html]', function ($request, $response, $args) {
+$app->get('/articles/php-app-architecture[.html]', function (Request $request,  Response $response, $args) {
     return $this->view->render($response, "php-app-architecture.twig", ["title" => "PHP App Architecture"]);
 });
 
