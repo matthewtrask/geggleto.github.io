@@ -25,7 +25,7 @@ $container['view'] = function ($c) {
 
 $app->add(function (Request $request,  Response $response, $next) {
     if ($request->getUri()->getScheme() !== 'https') {
-        $uri = $request->getUri()->withScheme("https");
+        $uri = $request->getUri()->withScheme("https")->withPort(null);
         return $response->withRedirect( (string)$uri );
     } else {
         return $next($request, $response);
