@@ -11,7 +11,7 @@ $container['settings']['displayErrorDetails'] = true;
 
 $container['view'] = function ($c) {
     $view = new \Slim\Views\Twig('../templates', [
-        'cache' => /*false*/ '../cache'
+        'cache' => false //'../cache'
     ]);
 
     // Instantiate and add Slim specific extension
