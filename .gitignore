@@ -7,3 +7,4 @@ phpunit.xml
 vendor
 clover.xml
 cache/
+composer.phar
